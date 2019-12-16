@@ -10,10 +10,10 @@
 #include <SPI.h>
 #include <Wire.h>
 
-/* DHT22*/
+/* DHT11*/
 #include "DHT.h"
 #define DHTPIN D3  
-#define DHTTYPE DHT22 
+#define DHTTYPE DHT11 
 DHT dht(DHTPIN, DHTTYPE);
 float para = 0;
 float temp = 0;
@@ -30,7 +30,7 @@ void loop()
 {
   getDhtData();
   displayData();
-  delay(2000); // delay for getting DHT22 data
+  delay(2000); // késleltetés a DHT11 adatokhoz
 }
 
 /***************************************************
@@ -39,11 +39,11 @@ void loop()
 void oledStart(void)
 {
   Wire.begin();  
-  oled.init();                      // Initialze SSD1306 OLED display
+  oled.init();                      
   clearOledDisplay();
-  oled.clearDisplay();              // Clear screen
+  oled.clearDisplay();             
   oled.setTextXY(0,0);              
-  oled.putString("  MJRoBot.org");
+  oled.putString(" NodeMCU farmer");
 }
 
 /***************************************************
@@ -82,7 +82,7 @@ void displayData(void)
 }
 
 /***************************************************
- * Oled kijelző tör
+ * Oled kijelző törlés
  **************************************************/
 void clearOledDisplay()
 {
