@@ -9,5 +9,8 @@ A projekt feladatai és főbb tulajdonságai:
 * Adatok nyomonkövetése telefonon illetve közbeavatkozás virtuális gombokon kersztül (pl öntözés indítása)
 * Adat exportálás CSV fájlba
 
+A test mappában találhatóak a teszt fájlok , kódok. 
+A NodeMCU farmer mapában pedig a végleges program látható.
+
  
 
